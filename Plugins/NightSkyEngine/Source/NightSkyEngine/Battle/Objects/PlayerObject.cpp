@@ -473,6 +473,17 @@ void APlayerObject::Update()
 	if (ComboCounter > 0)
 		ComboTimer++;
 
+	//5連続ヒット判定用タイマー
+	if (FiveHitTimer > 0)
+	{
+		FiveHitTimer--;
+
+		if (FiveHitTimer == 0)
+		{
+			FiveHitCount = 0;
+		}
+	}
+
 	if (PlayerFlags & PLF_IsThrowLock)
 	{
 		if (!bIsCpu) StoredInputBuffer.Update(Inputs, IsStopped());

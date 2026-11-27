@@ -262,6 +262,10 @@ struct FPlayerObjectLog : public FBattleObjectLog
 	int32 RecoverableHealth;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	int32 ComboCounter;
+
+	//このゲーム用のヒットカウント。前回のHITから５秒以内にヒットが続けばカウントアップ、５秒以上空くとリセットされる！
+	int32 FiveHitCount = 0;
+	int32 FiveHitTimer = 0;
 	
 	int32 TotalProration = 10000;
 	int32 ComboTimer;
@@ -526,6 +530,10 @@ public:
 	int32 RecoverableHealth;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	int32 ComboCounter;
+
+	//このゲーム用のヒットカウント。前回のHITから５秒以内にヒットが続けばカウントアップ、５秒以上空くとリセットされる！
+	int32 FiveHitCount = 0;
+	int32 FiveHitTimer = 0;
 	
 	int32 TotalProration = 10000;
 	int32 ComboTimer;
